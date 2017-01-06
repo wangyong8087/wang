@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="wdApp" ng-controller="wdCtrl">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="static/css/ionic.css" />
+	</head>
+	<body>
+		<ion-nav-view></ion-nav-view>
+		<script src="lib/ionic.bundle.js"></script>
+		<script>
+			angular.module("wdApp",["ionic"])
+			.controller("wdCtrl",["$scope",function($scope){
+				
+			}])
+			.config(["$stateProvider","$urlRouterProvider",function($stateProvider,$urlRouterProvider){
+				$stateProvider
+				.state("tabs",{
+					url:"/tabs",
+					templateUrl:"templates/pages/tabs.html"
+				})
+				.state("tabs.home",{
+					url:'home',
+					views:{"home":{templateUrl:"templates/pages/home.html"}}
+				})
+				.state("tabs.produce",{
+					url:"produce",
+					views:{"produce":{templateUrl:"templates/pages/prosuce.html"}}
+				})
+				.state("tabs.user",{
+					url:"/user",
+					views:{"user":{templateUrl:"templates/pages/user.html"}}
+				})
+				$urlRouterProvider.otherwise("/tabs/home")
+			}])
+		</script>
+			
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="wdApp" ng-controller="wdCtrl">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="static/css/ionic.css" />
+	</head>
+	<body>
+		<ion-nav-view></ion-nav-view>
+		<script src="lib/ionic.bundle.js"></script>
+		<script>
+			var app=angular.module("wdApp",["ionic"])
+			.controller("wdCtrl",["$scope",function($scope){
+				
+			}])
+			.config(["$stateProvider","$urlRouterProvider",function($stateProvider,$urlRouterProvider){
+				// 路由状态提供者
+				$stateProvider
+				// tabs 状态 ； 没有名字  （views 他是对应首页里面的 ion-nav-view）
+				// 状态
+				.state("tabs",{
+					// 状态对应的地址
+					url:"/tabs",
+					// 状态所对应的模板
+					templateUrl:"templates/pages/tabs.html"
+				})
+				// tabs子状态home
+				.state("tabs.home",{
+					
+					url:"/home",
+					// 视图 名称(ion-nav-view名称 )
+					views:{"home":{templateUrl:"templates/pages/home.html"}}
+				})
+				.state("tabs.produce",{
+					url:"/produce",
+					views:{"produce":{templateUrl:"templates/pages/produce.html"}}
+				})
+				.state("tabs.user",{
+					url:"/user",
+					views:{"user":{templateUrl:"templates/pages/user.html"}}
+				})
+				// 默认跳转到tabs
+				// 地址栏目的 提供者
+				$urlRouterProvider.otherwise("/tabs/home")
+			}])
+		</script>
+	</body>
+</html>

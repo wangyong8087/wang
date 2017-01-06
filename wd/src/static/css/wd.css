@@ -1,0 +1,90 @@
+
+/*color*/
+body{ font-family: "微软雅黑"; background-color: #fafafc;}
+a{ text-decoration: none; color: #3e6ba7;}
+.button-icon{ color: #666;}
+.button-wd-default{ color: #666 !important; font-size: 14px !important;}
+.item{ border-color: #e9e9e9;}
+.wd-positive{
+	color: #3e6ba7;
+}
+/*图标系统*/
+.wd-icon{ 
+	display: inline-block; 
+	position: relative;
+	width: 20px;
+	height: 20px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: auto 100%;
+	margin-right:3px;
+	}
+.wd-icon:after{
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: auto 100%;
+	
+	width: 20px;
+	height: 20px;
+	top:0;
+	left:0;
+	transform: translate(25%,25%);
+}
+.wd-icon-arrow-back:after{
+	background-image: url(../images/icon-arrow-back.png);
+
+}
+.wd-icon-moible{
+	background-image: url(../images/icon-mobile.png);
+}
+
+.wd-icon-key{
+	background-image: url(../images/icon-key.png);
+	background-size: 95% auto;
+}
+/*bar*/
+.bar-wd{
+	background: #fcfcfc;
+	border-bottom: 1px solid #e9e9e9;
+}
+
+.bar-wd .title{	
+	font-size:18px;
+	color:#3e6ba7;
+	
+}
+.has-delete ~ .wd-icon-delete{
+	cursor: pointer;
+	display: none;
+	padding: 0;
+	position: absolute;
+	right:10px;
+	top:50%;
+	transform: translate(0,-50%);
+	width:20px;
+	height: 20px;
+	line-height: 20px;
+	background-color: #ddd;
+	color: #eee;
+	border-radius: 50%;
+	text-align: center;	
+}
+.has-delete ~ .wd-icon-delete.show{
+	display: block;
+}
+
+/*间距*/
+.mt-10{
+	margin-top: 10px;
+}
+.mt-20{ margin-top:20px;}
+
+/*按钮*/
+.button-disabled{
+	font-size: 18px;
+	background-color:#e0e0e0;
+	color: #fff;
+}
+.button-wd-positive{
+	background-color:#3e6ba7 ;
+}
